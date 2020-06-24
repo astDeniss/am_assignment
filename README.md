@@ -24,7 +24,7 @@
 
 1. Make sure nothing is running on port 8000
 2. Navigate in your terminal to the project's root directory
-3. Rut the following command:
+3. Run the following command:
 
         docker-compose run web python manage.py migrate
 4. Start the docker container:
