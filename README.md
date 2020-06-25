@@ -32,8 +32,33 @@
         docker-compose up
         
 5. Done! Navigate in your browser to the links indicated above and 
-test the endpoints. :tada: :fireworks:
+test the endpoints. :tada:
         
 ***
 
 ### Running application locally without Docker:
+
+1. Clone this repository
+2. Create virtual environment. Example:
+
+       python3 -m venv ./venv
+
+3. Activate virtual environment. Example:
+
+        source ./venv/bin/activate
+        
+4. Install all required dependencies. Example:
+
+        pip install -r requirements.txt
+        
+5. Apply all required db migrations:
+
+        python3 manage.py migrate
+        
+6. Start your local server:
+
+        python3 manage.py runserver
+        
+7. Done. Go to your browser and test the endpoints. :fireworks:
+
+***
