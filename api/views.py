@@ -51,17 +51,20 @@ def get_children(category):
 
 def get_siblings(category):
     response_siblings = []
-    parent = Categories.objects.get(children=category)
-    children = parent.children.all()
+    try:
+        parent = Categories.objects.get(children=category)
+        children = parent.children.all()
 
-    for child in children:
+        for child in children:
 
-        if child.id is not category.id:
+            if child.id is not category.id:
 
-            category_serializer = CategorySerializer(child)
-            response_siblings.append(category_serializer.data)
+                category_serializer = CategorySerializer(child)
+                response_siblings.append(category_serializer.data)
 
-    return response_siblings
+        return response_siblings
+    except Categories.DoesNotExist:
+        return response_siblings
 
 
 class CategoriesView(APIView):
